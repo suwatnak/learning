@@ -3,7 +3,7 @@ version: '2'
 services:
 
 ### Workspace Utilities Container ###########################
-    migration-service:
+    learning:
         image: registry.thinknet.co.th/sredev/nodejs:boron
         ports:
             - "8080:8080"
