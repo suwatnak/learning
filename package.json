@@ -1,25 +1,16 @@
 {
-  "name": "learning",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-scripts": "1.0.11"
   },
-  "devDependencies": {},
   "scripts": {
-    "start": "node ./src/index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/suwatnak/learning.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/suwatnak/learning/issues"
-  },
-  "homepage": "https://github.com/suwatnak/learning#readme"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
 }
