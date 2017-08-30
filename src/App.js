@@ -6,7 +6,8 @@ class App extends Component {
       "note@1",
       "note@2",
       "note@3",
-    ]
+    ],
+    value: ''
   }
 
   componentDidMount() {
@@ -15,12 +16,15 @@ class App extends Component {
 
   addNote = (e) => {
     if (e.key ==='Enter') {
-      this.setState({notes: [...this.state.notes, e.target.value]},
-        ()=> { 
-          this.noteInput.value = ''
-        }
-    )
+      this.setState(
+        {
+          notes: [...this.state.notes, e.target.value],
+          value: ''
+        })
     }
+  }
+  changValue = (e) => {
+    this.setState({value: e.target.value})
   }
   render() {
     return(
@@ -33,6 +37,8 @@ class App extends Component {
           }
         </ul>
         <input type="text" 
+        value={this.state.value}
+        onChange={this.changValue}
         onKeyUp={this.addNote}
         ref={input => this.noteInput = input}/>
       </div>
