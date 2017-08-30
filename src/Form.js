@@ -6,15 +6,22 @@ class FormComponet extends Component {
     address: ''
   }
 
-  createContact = (e) => {
+  handleSubmit = (e) => {
     e.preventDefault()
-    console.log(this.state)
-
+    const { name, address } = this.state
+    this.props.onSubmit({
+      name,
+      address
+    })
+  this.clearForm()
   }
   changeState = state => (e) => (
     this.setState({ [state]: e.target.value })
   )
 
+  clearForm = () => {
+    this.setState({name:'',address:''})
+  }
   render() {
     const { name, address } = this.state
     return (
@@ -35,7 +42,7 @@ class FormComponet extends Component {
           </div>
           <button
             type="submit"
-            onClick={this.createContact}
+            onClick={this.handleSubmit}
           >create</button>
         </form>
       </div>
