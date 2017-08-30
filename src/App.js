@@ -9,12 +9,15 @@ class App extends Component {
     ]
   }
 
+  componentDidMount() {
+    this.noteInput.focus()
+  }
+
   addNote = (e) => {
     if (e.key ==='Enter') {
       this.setState({notes: [...this.state.notes, e.target.value]},
         ()=> { 
-          const notes = this.state.notes
-          console.log(notes[notes.length -1])
+          this.noteInput.value = ''
         }
     )
     }
@@ -29,7 +32,9 @@ class App extends Component {
             )
           }
         </ul>
-        <input type="text" onKeyUp={this.addNote}/>
+        <input type="text" 
+        onKeyUp={this.addNote}
+        ref={input => this.noteInput = input}/>
       </div>
     )
   }
