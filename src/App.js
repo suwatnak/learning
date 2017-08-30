@@ -11,7 +11,12 @@ class App extends Component {
 
   addNote = (e) => {
     if (e.key ==='Enter') {
-      this.setState({notes: [...this.state.notes, e.target.value]})
+      this.setState({notes: [...this.state.notes, e.target.value]},
+        ()=> { 
+          const notes = this.state.notes
+          console.log(notes[notes.length -1])
+        }
+    )
     }
   }
   render() {
