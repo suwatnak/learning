@@ -6,8 +6,13 @@ class App extends Component {
       "note@1",
       "note@2",
       "note@3",
-      "note@4",
     ]
+  }
+
+  addNote = (e) => {
+    if (e.key ==='Enter') {
+      this.setState({notes: [...this.state.notes, e.target.value]})
+    }
   }
   render() {
     return(
@@ -19,7 +24,7 @@ class App extends Component {
             )
           }
         </ul>
-        <input type="text" onKeyUp={(e) => e.keyCode===13 && this.setState({notes: [...this.state.notes, e.target.value]})}/>
+        <input type="text" onKeyUp={this.addNote}/>
       </div>
     )
   }
