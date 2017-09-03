@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Form from './Form'
-import Contacts from './Contacts'
+import Form from '../components/Form'
+import Contacts from '../components/Contacts'
 
 class App extends Component {
   state = {
