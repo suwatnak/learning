@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ContactComponent = ({ contacts }) => (
+const Contacts = ({ contacts }) => (
   <ul>
     {
       contacts.map(
@@ -11,4 +11,8 @@ const ContactComponent = ({ contacts }) => (
   </ul>
 )
 
-export default ContactComponent
+Contacts.defaultProps = {
+  contacts: []
+}
+
+export default Contacts
