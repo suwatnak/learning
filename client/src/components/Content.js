@@ -7,7 +7,7 @@ import { Sidebar } from '../containers'
 const Content = () => (
   <div>
     <Sidebar />
-    <Route path='/' component={Home} />
+    <Route exact path='/' component={Home} />
     <Route path='/categories/*' component={Categories} />
   </div>
 )
