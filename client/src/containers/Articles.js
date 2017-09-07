@@ -10,6 +10,14 @@ class ArticlesContainer extends Component {
     this.loadArticles()
   }
 
+  componentDidUpdate(prevProps) {
+    const {match} = this.props
+    const { match: prevMatch} = prevProps
+
+    if(match.params.categoryId !== prevMatch.params.categoryId) {
+      this.loadArticles()
+    }
+  }
   loadArticles() {
     const { categoryId } = this.props.match.params
     fetch(`http://localhost:8000/articles?categoryId=${categoryId}`)
