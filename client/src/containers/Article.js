@@ -16,12 +16,17 @@ class ArticleContiner extends Component {
       .then(res => res.json())
       .then(({ article }) => this.setState({ ...article }))
   }
+
+  backToPreviousUrl = () => {
+    this.props.history.goBack()
+  }
   render() {
     const { title, content } = this.state
     return (
       <div>
         <h2>{title}</h2>
         <p>{content}</p>
+        <button onClick={this.backToPreviousUrl}>Back</button>
       </div>
     );
   }
