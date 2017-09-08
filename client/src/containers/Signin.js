@@ -15,7 +15,7 @@ class SigninContainer extends Component {
   render() {
     return (
       <AuthForm
-        forName='Signin'
+        formName='Signin'
         onSubmit={this.handleFormSubmit} />
     )
   }
